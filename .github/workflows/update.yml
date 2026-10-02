@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/lotto.py
+      - name: Test previous lottery result
+        run: |
+          python -c "import sys; sys.path.insert(0, 'scripts'); from lotto import fetch_official; print(fetch_official(1243))"  
       - name: Commit verified data only
         run: |
           if ! git diff --quiet -- data/rounds.json; then
