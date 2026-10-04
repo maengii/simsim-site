@@ -11,3 +11,6 @@
 .game .ball.unmatched-ball{background:#354054!important;color:#aeb9c9!important;border:1px solid #586377;box-shadow:none;opacity:.55}
 .archive .game .ball.matched-ball,.archive .game .ball.bonus-ball{transform:none}
 .archive .game .ball.matched-ball::after,.archive .game .ball.bonus-ball::after{width:14px;height:14px;font-size:9px;right:-7px;top:-8px}
+
+/* Interactive cumulative records */
+.stat-button{font:inherit;color:inherit;text-align:left;cursor:pointer;width:100%;transition:border-color .18s,transform .18s}.stat-button small{display:block;margin-top:13px;font-size:11px;color:#8ae2c2}.stat-button:hover,.stat-button:focus-visible{border-color:#8ae2c2;transform:translateY(-2px);outline:none}.stat-button.selected{border:2px solid #8ae2c2;background:#1c3541}.history-controls{display:flex;align-items:center;gap:10px}.history-clear{font:inherit;color:#8ae2c2;background:#18372f;border:1px solid #367765;border-radius:9px;padding:7px 10px;cursor:pointer;font-size:12px}#history{scroll-margin-top:110px}@media(max-width:680px){.stat-button small{font-size:10px}.history-controls{flex-wrap:wrap;justify-content:flex-end}}
