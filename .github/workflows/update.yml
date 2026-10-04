@@ -6,9 +6,14 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
+  id-token: write
 jobs:
   update:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,6 +24,7 @@ jobs:
         run: |
           python -c "import sys; sys.path.insert(0, 'scripts'); from lotto import fetch_official; print(fetch_official(1243))"  
       - name: Commit verified data only
+        id: commit
         run: |
           if ! git diff --quiet -- data/rounds.json; then
             git config user.name "lotto5-bot"
@@ -26,4 +32,16 @@ jobs:
             git add data/rounds.json
             git commit -m "Update weekly lotto picks and verified results"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
+      - uses: actions/configure-pages@v5
+        if: steps.commit.outputs.changed == 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.commit.outputs.changed == 'true'
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        if: steps.commit.outputs.changed == 'true'
