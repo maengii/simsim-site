@@ -1,6 +1,54 @@
 {
   "rounds": [
     {
+      "round": 1250,
+      "draw_date": "2026-11-14",
+      "published_at": "2026-11-07T22:59:02+09:00",
+      "games": [
+        [
+          2,
+          14,
+          24,
+          25,
+          32,
+          33
+        ],
+        [
+          8,
+          27,
+          29,
+          39,
+          41,
+          43
+        ],
+        [
+          3,
+          6,
+          12,
+          27,
+          38,
+          39
+        ],
+        [
+          2,
+          4,
+          9,
+          20,
+          24,
+          44
+        ],
+        [
+          20,
+          29,
+          34,
+          40,
+          41,
+          44
+        ]
+      ],
+      "result": null
+    },
+    {
       "round": 1249,
       "draw_date": "2026-11-07",
       "published_at": "2026-10-31T22:38:21+09:00",
@@ -46,7 +94,46 @@
           44
         ]
       ],
-      "result": null
+      "result": {
+        "numbers": [
+          2,
+          11,
+          16,
+          25,
+          34,
+          35
+        ],
+        "bonus": 14,
+        "source": "https://www.dhlottery.co.kr/lt645/selectPstLt645Info.do?srchLtEpsd=1249",
+        "verified_at": "2026-11-07T22:59:02+09:00",
+        "matches": [
+          {
+            "game": 1,
+            "hits": 2,
+            "rank": null
+          },
+          {
+            "game": 2,
+            "hits": 1,
+            "rank": null
+          },
+          {
+            "game": 3,
+            "hits": 0,
+            "rank": null
+          },
+          {
+            "game": 4,
+            "hits": 1,
+            "rank": null
+          },
+          {
+            "game": 5,
+            "hits": 2,
+            "rank": null
+          }
+        ]
+      }
     },
     {
       "round": 1248,
